@@ -2,14 +2,23 @@ package org.example.repositories;
 
 public class MainMenuRepository {
     public String startGameMenu(){
-        return "Welcome to the Number Guessing Game!\n" +
-                "I'm thinking of a number between 1 and 100.\n" +
-                "You have 5 chances to guess the correct number.\n" +
-                "\n" +
-                "Please select the difficulty level:\n" +
+        return  "Please select the difficulty level:\n" +
                 "1. Easy   (10 chances)\n" +
                 "2. Medium (5 chances)\n" +
                 "3. Hard   (3 chances)\n" +
+                "\n" +
+                "Enter your choice:\n";
+    }
+
+    public String mainGameMenu(){
+        return  "Welcome to the Number Guessing Game!\n" +
+                "I'm thinking of a number between 1 and 100.\n" +
+                "You have 5 chances to guess the correct number.\n" +
+                "\n" +
+                "Please select the option:\n" +
+                "1. Start Game\n" +
+                "2. View ranking (best attempts)\n" +
+                "3. Exit   (3 chances)\n" +
                 "\n" +
                 "Enter your choice:\n";
     }
