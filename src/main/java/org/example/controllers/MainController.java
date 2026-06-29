@@ -23,20 +23,27 @@ public class MainController {
 
             int randomNumber = new Random().nextInt(configuration.RANDOM_MAX_NUMBER);
 
+            System.out.println(mainMenuRepository.mainGameMenu());
+
+            if(gameService.mainMenu(gameModel, scanner)){ break; }
+
             System.out.println(mainMenuRepository.startGameMenu());
 
             System.out.println(gameService.difficultyMenu(gameModel, scanner));
+
+            gameService.initTimeIntent();
 
             boolean userWin = gameService.introNumbers(randomNumber, gameModel.getIntents(), scanner);
 
             if (!userWin) { System.out.println(mainMenuRepository.youLoseString()); }
 
+            System.out.println(gameService.getTimeIntent());
+
+            gameService.saveAttempt(gameModel.getIntents());
+
             retryGame = gameService.endGameManager(scanner);
         }
     }
-
-
-
 }
 
 
